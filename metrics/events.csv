@@ -1,1 +1,5 @@
-
+event_type,timestamp,change_id,notes
+change_started,2026-10-12T08:00:00Z,change-001,작업 시작
+deployment,2026-10-12T10:00:00Z,change-001,첫 배포
+failure,2026-10-12T11:00:00Z,change-001,배포 후 오류
+recovery,2026-10-12T12:30:00Z,change-001,오류 복구
