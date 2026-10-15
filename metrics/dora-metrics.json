@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-15T10:05:41.891943+00:00",
+  "generated_at": "2026-10-15T10:08:40.610787+00:00",
   "source": "metrics/events.csv",
-  "lead_time_for_changes_hours": null,
-  "deployment_frequency_last_7_days": 0,
-  "mttr_hours": null,
-  "change_failure_rate_percent": null,
-  "deployment_count_total": 0,
-  "failed_change_count": 0,
+  "lead_time_for_changes_hours": 2.0,
+  "deployment_frequency_last_7_days": 1,
+  "mttr_hours": 1.5,
+  "change_failure_rate_percent": 100.0,
+  "deployment_count_total": 1,
+  "failed_change_count": 1,
   "notes": "Metrics are calculated from the events recorded in the CSV. Deployment frequency counts deployments in the last 7 days. Change failure rate uses changes with a recorded failure divided by the total number of deployments."
 }
