@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T10:08:40.610787+00:00",
+  "generated_at": "2026-10-19T03:55:46.825551+00:00",
   "source": "metrics/events.csv",
   "lead_time_for_changes_hours": 2.0,
   "deployment_frequency_last_7_days": 1,
