@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-19T03:55:46.825551+00:00",
+  "generated_at": "2026-10-26T03:58:14.537441+00:00",
   "source": "metrics/events.csv",
   "lead_time_for_changes_hours": 2.0,
-  "deployment_frequency_last_7_days": 1,
+  "deployment_frequency_last_7_days": 0,
   "mttr_hours": 1.5,
   "change_failure_rate_percent": 100.0,
   "deployment_count_total": 1,
