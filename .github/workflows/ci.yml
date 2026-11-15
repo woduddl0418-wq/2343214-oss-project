@@ -1,4 +1,3 @@
-
 name: Python CI
 
 on:
@@ -8,9 +7,41 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pull-requests: read
+
 jobs:
+  changes:
+    name: Detect Changed Files
+    runs-on: ubuntu-latest
+
+    outputs:
+      python: ${{ steps.filter.outputs.python }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed files
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            python:
+              - 'scripts/**'
+              - 'tests/**'
+              - 'metrics/events.csv'
+              - '.github/workflows/**'
+              - '.github/actions/**'
+              - 'requirements-dev.txt'
+
   python-ci:
     name: Python ${{ matrix.python-version }} / ${{ matrix.os }}
+    needs: changes
+    if: needs.changes.outputs.python == 'true'
 
     strategy:
       fail-fast: false
@@ -23,4 +54,3 @@ jobs:
     with:
       python-version: ${{ matrix.python-version }}
       os: ${{ matrix.os }}
-
