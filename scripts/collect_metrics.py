@@ -2,7 +2,7 @@
 import csv
 import json
 from collections import defaultdict
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -10,7 +10,7 @@ CSV_FILE = ROOT / "metrics" / "events.csv"
 JSON_FILE = ROOT / "metrics" / "dora-metrics.json"
 
 def parse_time(value):
-    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    return datetime.fromisoformat(value)
 
 events = []
 
@@ -60,7 +60,7 @@ for change_id, items in changes.items():
                 (min(later_recoveries) - failure).total_seconds() / 3600
             )
 
-now = datetime.now(timezone.utc)
+now = datetime.now(UTC)
 week_ago = now - timedelta(days=7)
 
 recent_deployments = sum(
