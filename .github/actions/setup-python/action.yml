@@ -21,6 +21,8 @@ runs:
       shell: bash
       run: python -m pip install -r requirements-dev.txt
 
-    - name: Show pip cache directory
+    - name: Show pip cache information
       shell: bash
-      run: python -m pip cache dir
+      run: |
+        python -m pip cache info
+        python -m pip cache list
