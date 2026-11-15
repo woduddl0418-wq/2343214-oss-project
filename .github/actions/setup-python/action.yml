@@ -1,6 +1,5 @@
-
 name: Setup Python Environment
-description: Set up Python and install Ruff
+description: Set up Python, install Ruff, and cache pip packages
 
 inputs:
   python-version:
@@ -11,7 +10,13 @@ inputs:
 runs:
   using: composite
   steps:
-          - name: Setup Python Environment
-        uses: ./.github/actions/setup-python
-        with:
-          python-version: ${{ inputs.python-version }}
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+        cache: pip
+        cache-dependency-path: requirements-dev.txt
+
+    - name: Install Ruff
+      shell: bash
+      run: python -m pip install -r requirements-dev.txt
