@@ -52,3 +52,48 @@ GitHub Actions에서 DORA Metrics Collection 워크플로를 실행한다. 실�
 
 ## 5. 결과 확인
 GitHub Actions 실행 기록에서 작업 성공 여부를 확인하고, 생성된 JSON 파일에서 DORA 지표를 확인한다.
+
+## 6. 프로젝트 소개
+GitHub 활동 데이터를 활용하여 DORA Metrics를 수집하고 관리하는 프로젝트입니다.
+
+## 7. 주요 기능
+- DORA Metrics 데이터 수집
+- GitHub Actions를 활용한 자동화
+- JSON 형식으로 결과 저장
+- 개발 활동 및 성과 분석
+
+## 8. 프로젝트 구조
+```text
+2343214-oss-project/
+├── .github/
+│   └── workflows/
+├── docs/
+│   └── adr/
+├── metrics/
+│   ├── events.csv
+│   └── dora-metrics.json
+├── scripts/
+│   └── collect_metrics.py
+├── LICENSE
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+└── README.md
+```
+
+## 9. 실행 방법
+1. 저장소를 Clone합니다.
+2. Python 개발 환경을 준비합니다.
+3. 필요한 파일과 라이브러리를 확인합니다.
+4. 프로젝트 스크립트를 실행합니다.
+
+## 10. 개발 환경
+- Python
+- Git
+- GitHub
+- GitHub Actions
+
+## 11. 기여 방법
+프로젝트에 기여하려면 CONTRIBUTING.md를 참고해 주세요.
+
+## 12. 라이선스
+본 프로젝트는 LICENSE 파일에 명시된 라이선스를 따릅니다.
